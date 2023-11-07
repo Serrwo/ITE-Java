@@ -3,12 +3,11 @@ import java.net.*;
 
 public class SimpleTCPServer {
 
-    private static final int PORT = 8888;
+    private static final int PORT = 4444;
 
     public static void main(String[] args) {
 
-        try {
-            ServerSocket serverSocket = new ServerSocket(PORT);
+        try (ServerSocket serverSocket = new ServerSocket(PORT)) {
 
             while (true) {
                 Socket sock = serverSocket.accept();
